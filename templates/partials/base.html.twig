@@ -1,0 +1,22 @@
+{% set theme_config = attribute(config.themes, config.system.pages.theme) %}
+<!DOCTYPE html>
+<html lang="{{ grav.language.getLanguage ?: 'en' }}">
+<head>
+    {% block head %}
+        {% include 'partials/head.html.twig' %}
+    {% endblock %}
+</head>
+<body>
+
+{# Wrap content in #app to allow vue components #}
+<div id="app">
+        {% include 'partials/navbar.html.twig' %}
+        {% include 'partials/navbar-clone.html.twig' %}
+    <section class="section">
+        {% block content %}{% endblock %}
+    </section>
+    {% include 'partials/footer.html.twig' %}
+    {% include 'partials/sidebar.html.twig' %}
+</div>
+</body>
+</html>

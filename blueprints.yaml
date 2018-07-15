@@ -1,0 +1,234 @@
+name: Fresh
+version: 0.2
+description: Fresh is a colorful landing page. It features a single page with a few sections to get started. Fresh is based on Bulma framework and it's easy to use flexbox grid.
+text:
+    type: text
+    label: Home page is achieved by going to Pages  - Advanced - Page template - and selecting Home. This gives official look to main page of your site. 
+icon: pied-piper-alt
+test:
+    type: display
+    size: large
+    label: Instructions
+    markdown: true
+    content: "This is a test of **bold** and _italic_ in a text/display field\n\nanother paragraph...."
+author:
+    name: diomed
+    url: https://github.com/diomed
+homepage: https://github.com/diomed/fresh
+keywords: fresh, grav, 
+bugs: https://github.com/diomed/fresh/issues
+license: MIT
+
+
+form:
+  validation: loose
+  fields:
+    dropdown.enabled:
+        type: toggle
+        label: Dropdown in navbar
+        highlight: 1
+        default: 1
+        options:
+            1: PLUGIN_ADMIN.ENABLED
+            0: PLUGIN_ADMIN.DISABLED
+        validate:
+            type: bool     
+        copyright:
+            type: textarea
+            label: Copyright
+        person:
+            type: textarea
+            label: Author
+        year:
+            type: textarea
+            label: Year
+
+    logo:
+        type: file
+        label: Logo
+        destination: 'user/themes/fresh/assets/images/logos'
+        limit: 1
+
+    favicon:
+        type: file
+        label: Favicon
+        destination: 'user/themes/fresh/aseets/images/favicon'
+        limit: 1
+        accept:
+            - image/*
+            - svg          
+    social_icons:
+        type: list
+        style: vertical
+        label: Social icons
+        help: your links should always have http:// or https://
+        fields:
+            .icon:
+                type: text
+                label: social icon
+            .url:
+                type: text
+                label: link 2 site
+    fields:
+        tabs:
+        type: tabs
+        active: 1
+        fields:                               
+            sidebars:
+                type: tab
+                title: Sidebar Links
+                fields:
+                    sidebar:
+                        type: fieldset
+                        title: Sidebar Section 1
+                        help: sidebar links - section one
+                        icon: pied-piper-alt
+                        collapsed: false     # Initial state of fieldset 
+                        collapsible: true    # Whether one can expand the fieldset or not 
+                        fields:                          
+                            sidebar.category:
+                                type: text
+                                label: Category name for links
+                            sidebar.links:
+                                type: array
+                                label: Sidebar links
+                                help: First goes page name, then goes link. Your links should always have http:// or https://
+                                placeholder_key: Page title
+                                placeholder_value: http://vincentadultman.com
+                                required: true
+                                validate:
+                                    type: array
+
+
+                    faber:
+                        type: fieldset
+                        title: Sidebar Section 2
+                        help: sidebar links - section two
+                        icon: ge
+                        collapsed: false     # Initial state of fieldset 
+                        collapsible: true    # Whether one can expand the fieldset or not 
+                        fields:                          
+                            category2:
+                                type: text
+                                label: Category name for links
+                            lynx:
+                                type: array
+                                label: Sidebar links
+                                help: First goes page name, then goes link. Your links should always have http:// or https://
+                                placeholder_key: Page title
+                                placeholder_value: http://vincentadultman.com
+                                required: true
+                                validate:
+                                    type: array          
+
+                    iomago:
+                        type: fieldset
+                        title: Sidebar Section 3
+                        help: sidebar links - section 3
+                        icon: image
+                        collapsed: false     # Initial state of fieldset 
+                        collapsible: true    # Whether one can expand the fieldset or not 
+                        fields:                          
+                            insipia:
+                                type: text
+                                label: Category name for links
+                            lnx:
+                                type: array
+                                label: Sidebar links (hover over me)
+                                help: First goes page name, then goes link. Your links should always have http:// or https://
+                                placeholder_key: Page title
+                                placeholder_value: http://vincentadultman.com
+                                required: true
+                                validate:
+                                    type: array                                                              
+
+                    yiomago:
+                        type: fieldset
+                        title: Sidebar Section 4
+                        help: sidebar links - section 4
+                        icon: cog
+                        collapsed: false     # Initial state of fieldset 
+                        collapsible: true    # Whether one can expand the fieldset or not 
+                        fields:                          
+                            catsuomahe:
+                                type: text
+                                label: Category name for links
+                            cog:
+                                type: array
+                                label: Sidebar links (hover over me)
+                                help: First goes page name, then goes link. Your links should always have http:// or https://
+                                placeholder_key: Page title
+                                placeholder_value: http://vincentadultman.com
+                                required: true
+                                validate:
+                                    type: array
+
+            footer:
+                type: tab
+                title: Footer         
+                fields:          
+                    header.fieldset:
+                        type: fieldset
+                        title: Footer Column One
+                        help: your links should always have http:// or https://
+                        info: Links for footer column one
+                        icon: star
+                        collapsed: false     # Initial state of fieldset 
+                        collapsible: true    # Whether one can expand the fieldset or not 
+                        fields:                          
+                            header.category:
+                                type: text
+                                label: Category name for links
+                            header.links:
+                                type: array
+                                label: Footer links
+                                help: your links should always have http:// or https://
+                                placeholder_key: Page title
+                                placeholder_value: http://unsplash.com
+                                required: true
+                                validate:
+                                    type: array
+
+                    header.fieldset2:
+                        type: fieldset
+                        title: Footer Column Two
+                        help: your links should always have http:// or https://
+                        info: Links for footer column 2
+                        icon: glass
+                        collapsed: true     # Initial state of fieldset
+                        collapsible: true    # Whether one can expand the fieldset or not 
+                        fields:
+                            header.cat2:
+                                type: text
+                                label: Category name for links
+                            header.links2:
+                                type: array
+                                label: Footer links
+                                help: your links should always have http:// or https://
+                                placeholder_key: Page title
+                                placeholder_value: http://www.page.com
+                                required: true
+                                validate:
+                                    type: array      
+
+                    header.fieldset3:
+                        type: fieldset
+                        title: Footer Column Three
+                        help: your links should always have http:// or https://
+                        info: Links for footer column 3
+                        icon: anchor
+                        collapsed: true     # Initial state of fieldset
+                        collapsible: true    # Whether one can expand the fieldset or not 
+                        fields:
+                            header.cat3:
+                                type: text
+                                label: Category name for links
+                            header.links3:
+                                type: array
+                                label: Footer links
+                                help: your links should always have http:// or https://
+                                placeholder_key: Page title
+                                placeholder_value: http://www.page.net
+                                required: true
+                                validate:
+                                    type: array                 

@@ -1,0 +1,175 @@
+{% extends 'partials/base.html.twig' %} {% block content %}
+<section class="hero is-fullheight is-default is-bold">
+    <div class="hero-body">
+        <div class="container">
+            <div class="columns is-vcentered">
+                <div class="column is-5 is-offset-1 landing-caption">
+                    <h1 class="title is-1 is-bold is-spaced">{{page.header.fin}}</h1>
+                    <h2 class="subtitle is-5 is-muted">{{page.header.subtitle}}</h2>
+                    <p>
+                        <a class="button cta rounded primary-btn raised" href="http://{{page.header.url}}">
+                                {{page.header.gumb}}
+                            </a>
+                    </p>
+                </div>
+                <div class="column is-5 is-offset-1">
+                    <img src="{{url('theme://assets/images/illustrations/io.png')}}" alt="main header image">
+                </div>
+            </div>
+        </div>
+    </div>
+    {# <div class="hero-foot mb-20">
+        <div class="container">
+            <div class="tabs is-centered">
+                <ul>
+                    <li><a><img class="partner-logo" src="{{url('theme://assets/images/logos/clients/systek.svg')}}"></a></li>
+                    <li><a><img class="partner-logo" src="{{ url('theme://assets/images/logos/clients/tribe.svg') }}"></a></li>
+                    <li><a><img class="partner-logo" src="{{url('theme://assets/images/logos/clients/kromo.svg')}}"></a></li>
+                    <li><a><img class="partner-logo" src="{{url('theme://assets/images/logos/clients/infinite.svg')}}"></a></li>
+                    <li><a><img class="partner-logo" src="{{url('theme://assets/images/logos/clients/gutwork.svg')}}"></a></li>
+                </ul>
+            </div>
+        </div>
+    </div> #}
+</section>
+<section class="section section-feature-grey is-medium">
+    <div class="container">
+        <div class="title-wrapper has-text-centered">
+            <h2 class="title is-2">{{page.header.h1}}</h2>
+            <h3 class="subtitle is-5 is-muted">{{page.header.mini}}</h3>
+            <div class="divider is-centered"></div>
+        </div>
+        <div class="content-wrapper">
+            <div class="columns">
+               {% for card in page.header.feature_cards %}
+                <div class="column is-one-third">
+                    <div class="feature-card is-bordered has-text-centered revealOnScroll delay-1" data-animation="fadeInLeft">
+                        <div class="card-title">
+                            <h4>{{card.title}}</h4>
+                        </div>
+                        <div class="card-icon">
+                            <img src="{{url('theme://assets/images/illustrations/icons/' ~ card.icon )}}" alt="there was image here once" />
+                        </div>
+                        <div class="card.text">
+                            <p>{{card.text}}</p>
+                        </div>
+                        <div class="card-action">
+                            <a href="#" class="button btn-align-md accent-btn raised">{{card.button}}</a>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</section>
+<section class="section is-medium">
+    <div class="container">
+        <div class="columns">
+            <div class="column is-centered-tablet-portrait">
+                <h1 class="title section-title">{{page.header.section.title}}</h1>
+                <h3 class="subtitle is-5 is-muted">{{page.header.section.subtitle}}</h3>
+                <div class="divider"></div>
+            </div>
+            <div class="column is-7 mt-60">
+                <!-- icon block -->
+                               {% for snippet in page.header.cardlist %}
+
+                <article class="media icon-box">
+                    <figure class="media-left">
+                        <p class="image">
+                            <img src="{{url('theme://assets/images/illustrations/icons/' ~ snippet.icon )}}" alt="there was image here once" />
+                        </p>
+                    </figure>
+                    <div class="media-content mt-50">
+                        <div class="content ">
+                            <p>
+                                <span class="icon-box-title">{{snippet.title}}</span>
+                                <span class="icon-box-text">{{snippet.words}}</span>
+                            </p>
+                        </div>
+                    </div>
+                </article>
+                   {% endfor %}
+                <!-- /icon block -->
+            </div>
+        </div>
+    </div>
+</section>
+<section class="section section-feature-grey is-medium">
+    <div class="container">
+        <div class="columns">
+            <div class="column is-10 is-offset-1">
+                <div class="has-text-centered">
+                    <img class="pushed-image" src="{{url('theme://assets/images/illustrations/mockups/app-mockup.png')}}">
+                </div>
+            </div>
+        </div>
+        <div class="title-wrapper has-text-centered">
+            <h2 class="title is-2">{{page.header.platform}}</h2>
+            <h3 class="subtitle is-5 is-muted">{{page.header.ruleall}}</h3>
+        </div>
+        <p class="has-text-centered mt-20">
+            <a href="{{page.header.sapiroth}}" class="button cta is-large rounded secondary-btn raised">
+                    {{page.header.button}}
+                </a>
+        </p>
+    </div>
+</section>
+<section class="section is-medium section-secondary">
+    <div class="container">
+        <div class="title-wrapper has-text-centered">
+            <h2 class="title is-2 light-text is-spaced">{{page.header.superbigtitle}}</h2>
+            <h3 class="subtitle is-5 light-text">{{page.header.say}} </h3>
+        </div>
+        <div class="content-wrapper">
+            <div class="columns is-vcentered">
+                {% for testimony in page.header.testimonials %}
+                <div class="column is-4">
+                    <figure class="testimonial">
+                        <blockquote>
+                            {{testimony.testimony}}
+                        </blockquote>
+                        <div class="author">
+                            <img src="{{url('theme://assets/images/illustrations/faces/' ~ testimony.avatar )}}" alt="there was image here once" />
+                            <h5>{{testimony.name}}</h5><span>{{testimony.job}}</span>
+                        </div>
+                    </figure>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</section>
+{# <section class="section section-light-grey is-medium">
+    <div class="container">
+        <div class="title-wrapper has-text-centered">
+            <h2 class="title is-2 is-spaced">Drop us a line or two </h2>
+            <h3 class="subtitle is-5 is-muted">We'd love to hear from You</h3>
+            <div class="divider is-centered"></div>
+        </div>
+        <div class="content-wrapper">
+            <div class="columns">
+                <div class="column is-6 is-offset-3">
+                    <form>
+                        <div class="columns is-multiline">
+                            <div class="column is-6">
+                                <input class="input is-medium" type="text" placeholder="Enter your Name">
+                            </div>
+                            <div class="column is-6">
+                                <input class="input is-medium" type="email" placeholder="Enter your Email">
+                            </div>
+                            <div class="column is-12">
+                                <textarea class="textarea" rows="10" placeholder="Write someting ..."></textarea>
+                            </div>
+                            <div class="form-footer has-text-centered mt-10">
+                                <button class="button cta is-large primary-btn raised is-clear">Send Message</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section> #}
+{% endblock %}

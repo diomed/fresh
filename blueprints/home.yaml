@@ -1,0 +1,149 @@
+title: Home
+
+@extends:
+   type: default
+   context: blueprints://pages
+
+form:
+  fields:
+    tabs:
+      fields:
+        content:
+        unset@: true
+        hero:
+          type: tab
+          title: Hero
+          fields:
+            header.title:
+              type: text
+              label: Page Title
+              help: type of this page is Home and it represents main page of your website
+            header.fin:
+              type: text
+              label: Hero Title
+              help:
+            header.subtitle:
+              type: text
+              label: Hero subtitle
+              help:
+            header.gumb:
+              type: text
+              label: Button text
+            header.url:
+              type: text
+              label: Button link
+              prepend: http://
+        feature-cards:
+          type: tab
+          title: Feature Cards
+          fields:
+            header.h1:
+              type: text
+              label: Section Title
+              help: Great power comes
+            header.mini:
+              type: text
+              label: section text  
+              help: With great Responsibility
+
+            header.feature_cards:
+              type: list
+              style: vertical
+              fields:
+                .title:
+                  type: text
+                  label: Card title
+                .icon:
+                  type: filepicker
+                  folder: 'theme@:/assets/images/illustrations/icons'
+                  preview_images: true
+                  label: Icon
+                .text:
+                  type: text
+                  label: Small text
+                .button:
+                  type: text
+                  label: Button
+                .url:
+                  type: text
+                  label: Link
+                  help: your links should always have http://
+
+        section:
+          type: tab
+          title: Section Slash
+          help: above orange field
+          fields:
+            header.section.title:
+              type: text
+              label: Section title
+              help: You're here because you want the best
+            header.section.subtitle:
+              type: text
+              label: Section subtitle
+              help: And we know it
+            header.cardlist:
+              type: list
+              style: vertical
+              label: Mini Cards
+              fields: 
+                .icon:
+                  type: filepicker
+                  folder: 'theme@:/assets/images/illustrations/icons'
+                  preview_images: true
+                  label: Icon
+                .title:
+                  type: text
+                  label: Title
+                .words:
+                  type: text
+                  label: Text
+        feature-grey:
+          type: tab
+          title: Feature Gray Section
+          fields:
+            header.platform:
+              type: text
+              label: Header text
+              help: One platform    
+            header.ruleall:
+              type: text
+              label: Subtext
+              help: to rule them all
+            header.button:
+              type: text
+              label: Button text
+            header.sapiroth:
+              type: text
+              label: URL
+        testimonials:
+          type: tab
+          title: Testimonials
+          fields:
+            header.superbigtitle:
+              type: text
+              label: Title above cards
+              help: Our clients love us!
+            header.say:
+              type: text
+              label: small text
+            header.testimonials:
+              name: testimonials
+              type: list
+              style: vertical
+              label: Testimonials
+              fields:
+                .testimony:
+                  type: textarea
+                  label: Testimony
+                .avatar:
+                  type: filepicker
+                  folder: 'theme@:/assets/images/illustrations/faces'
+                  preview_images: true
+                  label: Avatar
+                .name:
+                  type: text
+                  label: Name
+                .job:
+                  type: text
+                  label: Job position

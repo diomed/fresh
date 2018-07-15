@@ -1,0 +1,29 @@
+<meta charset="utf-8" />
+<title>{% if header.menu %}{{ header.menu|e('html') }}{% elseif header.title %}{{ header.title|e('html') }}{% endif %} | {{ site.title|e('html') }}</title>
+{% include 'partials/metadata.html.twig' %}
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0" />
+{% set image_parts = pathinfo(grav.theme.config.theme.favicon) %}
+<link rel="icon" type="image/png" href="{{ url('theme://assets/images/favicon.png') }}" />
+<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600" rel="stylesheet">
+
+        <!--Core CSS -->
+                {% do assets.addCss('theme://assets/css/bulma.min.css') %}
+                {% do assets.addCss('theme://assets/css/core.css') %}
+
+        <!--Libraries-->
+                        {% do assets.addCss('theme://assets/css/icons.css') %}
+
+        <link rel="canonical" href="{{ page.url(true, true) }}" />
+{{ assets.css() }}
+
+    {% block javascripts %}
+    {% do assets.addJs('jquery', 100) %}
+    {% do assets.addJs('theme://js/app.js', 100) %}
+    {% do assets.addJs('theme://js/fresh.js', 100) %}
+
+    {% if browser.getBrowser == 'msie' and browser.getVersion < 9 %}
+        {% do assets.addJs('https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js') %}
+        {% do assets.addJs('https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js') %}
+    {% endif %}
+{% endblock %}
+    {{ assets.js() }}

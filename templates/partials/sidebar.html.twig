@@ -1,0 +1,63 @@
+<div class="sidebar">
+    <div class="sidebar-header">
+        <img src="{{url('theme://assets/images/logos/fresh-square.svg')}}">
+        <a class="sidebar-close" href="javascript:void(0);"><i data-feather="x"></i></a>
+    </div>
+    <div class="inner">
+        <ul class="sidebar-menu">
+            <li class="have-children">
+                <a href="{{key}}">
+                    <span class="fa fa-pied-piper-alt"></span>
+                    {{theme_var('sidebar.category')}}
+                </a>
+                <ul>
+                    {% for key, value in theme_var('sidebar.links') %}
+                        <li>
+                            <a href="{{value}}">
+                                {{key}}
+                            </a>
+                        </li>
+                    {% endfor %}
+                </ul>
+            </li>
+        </ul>
+        
+        <ul class="sidebar-menu">
+            <li><span class="nav-section-title"></span></li>
+            <li class="have-children"><a href="{{key}}"><span class="fa fa-ge"></span>
+        {{theme_var('category2')}}</a>
+        <ul>
+            {% for key, value in theme_var('lynx') %}
+                <li><a href="{{value}}">{{key}}</a></li>
+            {% endfor %}
+        </ul>
+    </li>
+</ul>
+
+
+        <ul class="sidebar-menu">
+            <li><span class="nav-section-title"></span></li>
+            <li class="have-children"><a href="{{key}}"><span class="fa fa-image"></span>
+        {{theme_var('insipia')}}</a>
+        <ul>
+            {% for key, value in theme_var('lnx') %}
+                <li><a href="{{value}}">{{key}}</a></li>
+            {% endfor %}
+        </ul>
+    </li>
+</ul>
+
+        <ul class="sidebar-menu">
+            <li><span class="nav-section-title"></span></li>
+            <li class="have-children"><a href="{{key}}"><span class="fa fa-cog"></span>
+        {{theme_var('catsuomahe')}}</a>
+        <ul>
+            {% for key, value in theme_var('cog') %}
+                <li><a href="{{value}}">{{key}}</a></li>
+            {% endfor %}
+        </ul>
+    </li>
+</ul>
+
+</div>
+</div>
