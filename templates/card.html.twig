@@ -1,9 +1,9 @@
 {% extends 'partials/base.html.twig' %}
-{% do assets.addCss('theme://dist/css/cards.css', 100) %}
+{% do assets.addCss('theme://assets/css/cards.css', 100) %}
 {% block content %}
 	<div class="columns is-multiline">
 		{% for card in page.header.card %}
-			<div class="column is-3 spqr">
+			<div class="column is-3">
 				<div class="card card-1">
 					<h2 class="title is-4">{{card.title}}</h2>
 					<p>{{card.content|markdown}}</p>
