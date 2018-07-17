@@ -1,0 +1,29 @@
+title: card
+'@extends':
+    type: default
+
+form:
+  fields:
+    tabs:
+      fields:
+        content:
+        unset@: true
+        card:
+          type: tab
+          title: CARD
+          fields:
+            header.card:
+              type: list
+              collapsed: true
+              style: vertical
+              label: 𝌇 List of cards
+              fields:
+                .title:
+                    type: text
+                    label: Title
+                .content:
+                    type: markdown
+                    label: card text
+                    validate:
+                      type: textarea
+                      rows: 4
