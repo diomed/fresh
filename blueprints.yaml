@@ -52,7 +52,7 @@ form:
     favicon:
         type: file
         label: Favicon
-        destination: 'user/themes/fresh/aseets/images/favicon'
+        destination: 'user/themes/fresh/assets/images/favicon'
         limit: 1
         accept:
             - image/*
