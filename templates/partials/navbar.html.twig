@@ -2,7 +2,7 @@
     <div class="container">
         <div class="navbar-brand">
             <a class="navbar-item" href="#0">
-            <img src="{{ url('theme://assets/images/logos/' ~ config.themes.fresh.logo|first.name) }}" />
+            <img src="{{ url('theme://assets/images/logos/' ~ config.themes.fresh.logo|first.name) }}" height="28" />
             </a>
 
             <a class="navbar-item is-hidden-desktop is-hidden-tablet">
@@ -24,7 +24,7 @@
         </div>
 
         <div id="navbar-menu" class="navbar-menu is-static">
-
+            {% if theme_config.sidebar.enabled %}
             <div class="navbar-start">
                 <a class="navbar-item is-hidden-mobile">
                     <div id="menu-icon-wrapper" class="menu-icon-wrapper" style="visibility: visible;">
@@ -37,6 +37,7 @@
                     </div>
                 </a>
             </div>
+            {% endif %}
 
             {% macro loop(page) %}
     {% for p in page.children.visible %}
