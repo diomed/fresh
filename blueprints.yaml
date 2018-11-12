@@ -55,6 +55,18 @@ form:
         validate:
             type: bool  
 
+    reference_bulma:
+            type: toggle
+            label: Reference Bulma
+            default: 1
+            highlight: 1
+            help: 'Adds a ''Made with Bulma'' to the footer. It''s always nice credit hard workers.'
+            options:
+                1: PLUGIN_ADMIN.ENABLED
+                0: PLUGIN_ADMIN.DISABLED
+            validate:
+                type: bool     
+
     logo:
         type: file
         label: Logo

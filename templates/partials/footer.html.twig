@@ -55,9 +55,11 @@
                                 {% endfor %}
                             </div>
                         </nav>
+                        {% if theme_config.reference_bulma %}
                         <a href="https://bulma.io" target="_blank">
                             <img src="{{url('theme://assets/images/logos/made-with-bulma.png')}}" alt="Made with Bulma" width="128" height="24">
                         </a>
+                        {% endif %}
                     </div>
                 </div>
             </div>
