@@ -1,5 +1,5 @@
 name: Fresh
-version: 0.4
+version: 0.5
 description: Fresh is a colorful landing page. It features a single page with a few sections to get started. Fresh is based on Bulma framework and it's easy to use flexbox grid.
 text:
     type: text
