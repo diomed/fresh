@@ -16,7 +16,7 @@
                         {% do assets.addCss('theme://assets/css/icons.css') %}
 
         <link rel="canonical" href="{{ page.url(true, true) }}" />
-{{ assets.css() }}
+{{ assets.css()|raw }}
 
     {% block javascripts %}
     {% do assets.addJs('jquery', 100) %}
@@ -28,4 +28,4 @@
         {% do assets.addJs('https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js') %}
     {% endif %}
 {% endblock %}
-    {{ assets.js() }}
+    {{ assets.js()|raw }}
