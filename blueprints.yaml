@@ -1,5 +1,5 @@
 name: Fresh
-version: 0.5
+version: 0.6
 description: Fresh is a colorful landing page. It features a single page with a few sections to get started. Fresh is based on Bulma framework and it's easy to use flexbox grid.
 text:
     type: text
@@ -15,7 +15,7 @@ author:
     name: diomed
     url: https://github.com/diomed
 homepage: https://github.com/diomed/fresh
-keywords: fresh, grav, 
+keywords: fresh, grav, bulma, etc
 bugs: https://github.com/diomed/fresh/issues
 license: MIT
 
